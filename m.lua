@@ -84,7 +84,6 @@ function  lib:CreateWindow(binding)
             TextButton.TextSize = 24.000
             TextButton.TextWrapped = true
 
-            UICorner_3.Parent = TextButton
             local toggled = false
             TextButton.MouseButton1Down:Connect(function()
                 if toggled == true then
@@ -101,6 +100,7 @@ function  lib:CreateWindow(binding)
         end
         function section:CreateTextBox(prevText, buttonText, callback)
 
+            
             local TextBox = Instance.new("TextBox")
             local TextButton = Instance.new("TextButton")
           
