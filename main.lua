@@ -11,13 +11,12 @@ function  lib:CreateWindow(binding)
    
 
         local Frame = Instance.new("Frame")
-        local UICorner = Instance.new("UICorner")
+
 
         local Frame_2 = Instance.new("Frame")
-        local UICorner_2 = Instance.new("UICorner")
-        local UICorner51 = Instance.new("UICorner")
+        
         local UIListLayout = Instance.new("UIListLayout")
-        UICorner51.Parent = TextLabel
+        
         TextLabel.Active = true
         TextLabel.Selectable = true
         TextLabel.Draggable = true
@@ -25,7 +24,7 @@ function  lib:CreateWindow(binding)
         TextLabel.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.BorderColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.Position = Pos
-        TextLabel.Size = UDim2.new(0, 217, 0, 69)
+        TextLabel.Size = UDim2.new(0, 216, 0, 69)
         TextLabel.Font = Enum.Font.Code
         TextLabel.Text = SectionTitle
         TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -38,7 +37,7 @@ function  lib:CreateWindow(binding)
         Frame.Position = UDim2.new(0, 0, 0.897640288, 0)
         Frame.Size = UDim2.new(0, 217, 0, 513)
 
-        UICorner.Parent = Frame
+
 
         Frame_2.Parent = Frame
         Frame_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -46,7 +45,6 @@ function  lib:CreateWindow(binding)
         Frame_2.Position = UDim2.new(0, 0, 0.0176599529, 0)
         Frame_2.Size = UDim2.new(0, 217, 0, 513)
 
-        UICorner_2.Parent = Frame_2
 
         UIListLayout.Parent = Frame_2
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -55,7 +53,7 @@ function  lib:CreateWindow(binding)
         function section:CreateButton(buttonTitle, callback)
             
             local TextButton = Instance.new("TextButton")
-            local UICorner_3 = Instance.new("UICorner")
+
 
             TextButton.Parent = Frame_2
             TextButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
@@ -68,13 +66,12 @@ function  lib:CreateWindow(binding)
             TextButton.TextSize = 24.000
             TextButton.TextWrapped = true
 
-            UICorner_3.Parent = TextButton
             TextButton.MouseButton1Down:Connect(callback)
         end
         function section:CreateToggle(toggleTitle, callback)
             
             local TextButton = Instance.new("TextButton")
-            local UICorner_3 = Instance.new("UICorner")
+
 
             TextButton.Parent = Frame_2
             TextButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
@@ -105,9 +102,8 @@ function  lib:CreateWindow(binding)
         function section:CreateTextBox(prevText, buttonText, callback)
 
             local TextBox = Instance.new("TextBox")
-            local UICorner = Instance.new("UICorner")
             local TextButton = Instance.new("TextButton")
-            local UICorner_2 = Instance.new("UICorner")
+          
             
             TextBox.Parent = Frame_2
             TextBox.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
@@ -121,7 +117,7 @@ function  lib:CreateWindow(binding)
             TextBox.TextSize = 14.000
             TextBox.TextWrapped = true
             
-            UICorner.Parent = TextBox
+          
             
             TextButton.Parent = TextBox
             TextButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
@@ -134,7 +130,7 @@ function  lib:CreateWindow(binding)
             TextButton.TextSize = 14.000
             TextButton.TextWrapped = true
             TextButton.Text = buttonText
-            UICorner_2.Parent = TextButton
+
             
             TextButton.MouseButton1Down:Connect(function()
                 callback(TextBox.Text)
