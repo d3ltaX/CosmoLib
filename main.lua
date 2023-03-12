@@ -36,7 +36,7 @@ function  lib:CreateWindow(binding)
         Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
         Frame.BorderColor3 = Color3.fromRGB(40, 40, 40)
         Frame.Position = UDim2.new(0, 0, 0.897640288, 0)
-        Frame.Size = UDim2.new(0, 244, 0, 585)
+        Frame.Size = UDim2.new(0, 217, 0, 513)
 
         UICorner.Parent = Frame
 
@@ -44,7 +44,7 @@ function  lib:CreateWindow(binding)
         Frame_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
         Frame_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
         Frame_2.Position = UDim2.new(0, 0, 0.0176599529, 0)
-        Frame_2.Size = UDim2.new(0, 244, 0, 567)
+        Frame_2.Size = UDim2.new(0, 217, 0, 513)
 
         UICorner_2.Parent = Frame_2
 
