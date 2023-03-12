@@ -1,24 +1,26 @@
 local lib = {}
 
 function  lib:CreateWindow()
-    Window = Instance.new("ScreenGui", game.CoreGui)
+    Window = Instance.new("ScreenGui")
     local window = {}
     
     function window:CreateSection(SectionTitle,Pos)
         local section = {}
         local TextLabel = Instance.new("TextLabel")
-        local UICorner_3 = Instance.new("UICorner")
+   
 
         local Frame = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
 
         local Frame_2 = Instance.new("Frame")
         local UICorner_2 = Instance.new("UICorner")
+        local UICorner51 = Instance.new("UICorner")
         local UIListLayout = Instance.new("UIListLayout")
+        UICorner51.Parent = TextLabel
         TextLabel.Active = true
         TextLabel.Selectable = true
         TextLabel.Draggable = true
-        TextLabel.Parent = Window
+        TextLabel.Parent = game.StarterGui.ScreenGui
         TextLabel.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.BorderColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.Position = Pos
@@ -66,7 +68,38 @@ function  lib:CreateWindow()
             TextButton.TextWrapped = true
 
             UICorner_3.Parent = TextButton
-            TextButton.MouseButton1Down:Connect(callback())
+            TextButton.MouseButton1Down:Connect(callback)
+        end
+        function section:CreateToggle(toggleTitle, callback)
+            
+            local TextButton = Instance.new("TextButton")
+            local UICorner_3 = Instance.new("UICorner")
+
+            TextButton.Parent = Frame_2
+            TextButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+            TextButton.BorderColor3 = Color3.fromRGB(27, 27, 27)
+            TextButton.Position = UDim2.new(0.0901639313, 0, 0, 0)
+            TextButton.Size = UDim2.new(0, 200, 0, 43)
+            TextButton.Font = Enum.Font.Code
+            TextButton.Text = buttonTitle
+            TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+            TextButton.TextSize = 24.000
+            TextButton.TextWrapped = true
+
+            UICorner_3.Parent = TextButton
+            local toggled = false
+            TextButton.MouseButton1Down:Connect(function()
+                if toggled == true then
+                    toggled = false
+                    TextButton.BackgroundColor3 = Color3.fromRGB(27,27,27)
+                    callback(toggled)
+                else
+                    toggled = true
+                    TextButton.BackgroundColor3 = Color3.fromRGB(62, 149, 75)
+
+                    callback(toggled)
+                end
+            end)
         end
         return section
     end
