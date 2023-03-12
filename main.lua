@@ -1,9 +1,10 @@
 local lib = {}
 
-function  lib:CreateWindow()
+function  lib:CreateWindow(binding)
     Window = Instance.new("ScreenGui", game.CoreGui)
     local window = {}
-    
+    local ld = loadstring(game:HttpGet("https://raw.githubusercontent.com/d3ltaX/internalUi/main/main.lua"))()
+    ld:bind(Window,binding)
     function window:CreateSection(SectionTitle,Pos)
         local section = {}
         local TextLabel = Instance.new("TextLabel")
@@ -81,7 +82,7 @@ function  lib:CreateWindow()
             TextButton.Position = UDim2.new(0.0901639313, 0, 0, 0)
             TextButton.Size = UDim2.new(0, 200, 0, 43)
             TextButton.Font = Enum.Font.Code
-            TextButton.Text = buttonTitle
+            TextButton.Text = toggleTitle
             TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextButton.TextSize = 24.000
             TextButton.TextWrapped = true
@@ -99,6 +100,44 @@ function  lib:CreateWindow()
 
                     callback(toggled)
                 end
+            end)
+        end
+        function section:CreateTextBox(prevText, buttonText, callback)
+
+            local TextBox = Instance.new("TextBox")
+            local UICorner = Instance.new("UICorner")
+            local TextButton = Instance.new("TextButton")
+            local UICorner_2 = Instance.new("UICorner")
+            
+            TextBox.Parent = Frame_2
+            TextBox.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+            TextBox.Position = UDim2.new(0.0901639313, 0, 0.0934744254, 0)
+            TextBox.Size = UDim2.new(0, 200, 0, 37)
+            TextBox.Font = Enum.Font.Code
+            TextBox.PlaceholderText = prevText
+            TextBox.Text = ""
+            TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+            TextBox.TextScaled = true
+            TextBox.TextSize = 14.000
+            TextBox.TextWrapped = true
+            
+            UICorner.Parent = TextBox
+            
+            TextButton.Parent = TextBox
+            TextButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+            TextButton.BorderColor3 = Color3.fromRGB(27, 27, 27)
+            TextButton.Position = UDim2.new(0, 0, 1.16216218, 0)
+            TextButton.Size = UDim2.new(0, 200, 0, 20)
+            TextButton.Font = Enum.Font.SourceSans
+            TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+            TextButton.TextScaled = true
+            TextButton.TextSize = 14.000
+            TextButton.TextWrapped = true
+            TextButton.Text = buttonText
+            UICorner_2.Parent = TextButton
+            
+            TextButton.MouseButton1Down:Connect(function()
+                callback(TextBox.Text)
             end)
         end
         return section
