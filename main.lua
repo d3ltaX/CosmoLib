@@ -1,7 +1,7 @@
 local lib = {}
 
 function  lib:CreateWindow()
-    Window = Instance.new("ScreenGui")
+    Window = Instance.new("ScreenGui", game.CoreGui)
     local window = {}
     
     function window:CreateSection(SectionTitle,Pos)
