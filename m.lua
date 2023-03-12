@@ -24,7 +24,7 @@ function  lib:CreateWindow(binding)
         TextLabel.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.BorderColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.Position = Pos
-        TextLabel.Size = UDim2.new(0, 216, 0, 69)
+        TextLabel.Size = UDim2.new(0, 217, 0, 69)
         TextLabel.Font = Enum.Font.Code
         TextLabel.Text = SectionTitle
         TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
