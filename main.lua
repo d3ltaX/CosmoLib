@@ -20,7 +20,7 @@ function  lib:CreateWindow()
         TextLabel.Active = true
         TextLabel.Selectable = true
         TextLabel.Draggable = true
-        TextLabel.Parent = game.StarterGui.ScreenGui
+        TextLabel.Parent = Window
         TextLabel.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.BorderColor3 = Color3.fromRGB(29, 29, 29)
         TextLabel.Position = Pos
